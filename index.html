@@ -40,19 +40,23 @@
 						renta = donBarriga.getDonRamon().getRenta();
 					</code></pre>
 					<p>De momento no tenemos problemas...</a>.</p>
-					<img src="./static/don-ramon-barriga-1.webp" alt="reveal.js logo" style="height: 350px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					<img src="./static/don-ramon-barriga-1.webp" alt="reveal.js logo" style="height: 250px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 				</section>
 				<section data-auto-animate>
-					<h3 data-id="code-title">Ejemplo Practico 2</h3>
-					<p>Dos llamadas consecutivas</p>
+					<h3 data-id="code-title">Seguimos Encadenando</h3>
+					<p>Doña Florinda le da laburo de Don Ramon</p>
 					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
 						renta = donBarriga.getDonRamon().getTrabajoConDoniaFlorinda()
 					</code></pre>
 					<p>Toca agarrar la pala...</a>.</p>
-					<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; background: transparent;">
+					<!-- <div style="display: flex; justify-content: center; gap: 1rem;">
+						<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; background: transparent;">
+						<img src="./static/pala.jpg" alt="otra imagen" style="height: 350px; background: transparent;">
+					</div> -->
 				</section>
 				<section data-auto-animate>
-					<h3 data-id="code-title">Ejemplo Practico 3</h3>
+					<h3 data-id="code-title">Seguimos y Seguimos</h3>
 					<p>Muchas llamadas consecutivas</p>
 					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
 						renta = donBarriga.getDonRamon().getTrabajoConDonaFlorinda()
@@ -60,6 +64,22 @@
 									.usarParaPagarRenta();
 					</code></pre>
 					<p>Esto se empieza a poner feo...</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">Mucho acoplamiento </h3>
+					<p>Ya que si el codigo es modificado</p>
+					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
+						renta = donBarriga.getDonRamon().getTrabajoConDonaFlorinda()
+									.getPago()
+									.usarParaPagarRenta();
+					</code></pre>
+						<img src="./static/muere.jpg" alt="reveal.js logo" style="height: 200px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					<p>Se rompe todo</p>
+				</section>
+				<section>
+					<h3>Messaje Chains Sniffer</h3>
+					<p>Consideraciones a tener en cuenta</p>
+					<img src="./static/codigo.PNG" alt="reveal.js logo" style="height: 400px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 				</section>
 			</div>
 		</div>
