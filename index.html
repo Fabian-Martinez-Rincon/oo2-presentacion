@@ -17,7 +17,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background=""> 
-					<h2>Messaje Chains</h2>
+					<h2>Message Chains</h2>
 					<p>> Cadena de Mensajes</p>
 					<ul>
 						<li>Fabian Martinez Rincon</li>
@@ -25,16 +25,16 @@
 					</ul>
 				</section>
 				<section>
-					<h2>Preguntas</h2>
+					<h2>Message Chains</h2>
 					<ul>
-						<li>¿Que es?</li>
-						<li>¿En donde puede aparecer?</li>
-						<li>¿En que situaciones?</li>
+						<li>¿Qué es?</li>
+						<li>¿En dónde puede aparecer?</li>
+						<li>¿En qué situaciones?</li>
 					</ul>
-					<p>Con un Ejemplo practico se entendera mejor</p>
+					<p>Con un Ejemplo práctico se entenderá mejor</p>
 				</section>
 				<section data-auto-animate>
-					<h3 data-id="code-title">Ejemplo Practico</h3>
+					<h3 data-id="code-title">Ejemplo Práctico</h3>
 					<p>Don Barriga pide la Renta</p>
 					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
 						renta = donBarriga.getDonRamon().getRenta();
@@ -42,7 +42,7 @@
 					<p>De momento no tenemos problemas...</a>.</p>
 					<img src="./static/don-ramon-barriga-1.webp" alt="reveal.js logo" style="height: 250px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
 				</section>
-				<section data-auto-animate>
+				<!-- <section data-auto-animate>
 					<h3 data-id="code-title">Seguimos Encadenando</h3>
 					<p>Doña Florinda le da laburo de Don Ramon</p>
 					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
@@ -50,11 +50,11 @@
 					</code></pre>
 					<p>Toca agarrar la pala...</a>.</p>
 					<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; background: transparent;">
-					<!-- <div style="display: flex; justify-content: center; gap: 1rem;">
+					<div style="display: flex; justify-content: center; gap: 1rem;">
 						<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; background: transparent;">
 						<img src="./static/pala.jpg" alt="otra imagen" style="height: 350px; background: transparent;">
-					</div> -->
-				</section>
+					</div>
+				</section> -->
 				<section data-auto-animate>
 					<h3 data-id="code-title">Seguimos y Seguimos</h3>
 					<p>Muchas llamadas consecutivas</p>
@@ -63,13 +63,14 @@
 									.getPago()
 									.usarParaPagarRenta();
 					</code></pre>
-					<p>Esto se empieza a poner feo...</p>
+					<img src="./static/trabajo.gif" alt="reveal.js logo" style="height: 350px; background: transparent;">
+					
 				</section>
 				<section data-auto-animate>
 					<h3 data-id="code-title">Mucho acoplamiento </h3>
 					<p>Ya que si el codigo es modificado</p>
 					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
-						renta = donBarriga.getDonRamon().getTrabajoConDonaFlorinda()
+						renta = donBarriga.❌getDonRamon💀().getTrabajoConDonaFlorinda()
 									.getPago()
 									.usarParaPagarRenta();
 					</code></pre>
@@ -77,9 +78,62 @@
 					<p>Se rompe todo</p>
 				</section>
 				<section>
-					<h3>Messaje Chains Sniffer</h3>
-					<p>Consideraciones a tener en cuenta</p>
-					<img src="./static/codigo.PNG" alt="reveal.js logo" style="height: 400px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					<h3>¿Cómo lo detectamos?</h3>
+					<p>Definimos unos límites</p>
+					<ul>
+						<li>3 llamadas o más</li>
+						<li>A métodos o atributos</li>
+						<li>En asignaciones, parámetros o estructuras de control</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Casos de Prueba</h3>
+					<p>> Problemas de Semantica 😑</p>
+					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
+						persona = barco.pasajero();
+						nuevo = persona.padre();
+						familiar = nuevo.hijo();
+					</code></pre>
+					<p>¿Cumple con las reglas definidas?</p>
+					<img src="./static/reglas.png" alt="reveal.js logo" style="height: 150px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+				</section>
+				<section data-background="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnFvamJxb2hyYzVoZHg5cjRub2JidTlqeXhwejBzbThvY2Fsb2RocSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rsE2q1uxjyebu/giphy.gif">
+					<h1>NO</h1>
+				</section>
+				<section>
+					<h3>Implementación</h3>
+					<p>Pasó por varias etapas, ya que a la hora de definir los test, no pasaba la prueba de sintaxis. </p>
+					<img src="./static/error.png" alt="reveal.js logo" style="height: 300px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+				</section>
+				<section>
+					<h3>Notificamos</h3>
+					<p>Mandamos un mensajito en el foro avisando de que la concatenación de 'atributos' no fue definida en la gramatica</p>
+					<img src="./static/avisamos.PNG" alt="reveal.js logo" style="height: 300px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+				</section>
+				<section>
+					<h4>Después de la corrección de la gramática ❤️</h4>
+					<div style="display: flex; justify-content: center; gap: 1rem;">
+						<img src="./static/cambios_git2.PNG" alt="reveal.js logo" style="height: 400px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						<img src="./static/cambios_git3.PNG" alt="otra imagen" style="height: 200px; background: transparent;">
+					</div>
+				</section>
+				<section>
+					<h4>El metodo más relevante de nuestro Sniffer quedo asi</h4>
+					<pre data-id="code-animation"><code class="data-trim data-noescape hljs javascript" data-trim data-line-numbers>
+						private int cantidadCadenas(BythonParser ctx) {
+							return 
+										ctx.chainedMethodCall().size() 
+										+
+										ctx.propertyAccess().size();
+						}
+					</code></pre>
+				</section>
+				<section>
+					<h1>¿Preguntas?</h1>
+					<div style="display: flex; justify-content: center; gap: 1rem;">
+						<img src="./static/meme1.jpg" alt="reveal.js logo" style="height: 420px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+						<img src="./static/meme2.jpg" alt="otra imagen" style="height: 400px; background: transparent;">
+					</div>
 				</section>
 			</div>
 		</div>
